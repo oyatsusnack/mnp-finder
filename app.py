@@ -34,3 +34,8 @@ else:
  st.dataframe(df.rename(columns={'created_at':'投稿日時 (UTC)','prefecture':'都道府県','carrier':'キャリア','benefit':'特典','amount':'抽出金額（参考）','model':'機種','text':'投稿本文','url':'X投稿'}),hide_index=True,use_container_width=True,column_config={'X投稿':st.column_config.LinkColumn('X投稿',display_text='投稿を見る')})
  st.download_button('検索結果をCSV保存',df.to_csv(index=False).encode('utf-8-sig'),'mnp_results.csv','text/csv')
 st.warning('金額は投稿文からの機械抽出で、還元額・端末価格・条件を区別できない場合があります。特典の有効性や在庫、契約条件は元投稿・店舗で確認してください。')
+st.divider()
+st.subheader('📝 MNP特典情報の登録')
+post_text = st.text_area('MNP特典の投稿内容')
+if st.button('登録する'):
+     st.info('登録機能は準備中です')
